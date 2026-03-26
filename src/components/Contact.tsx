@@ -2,6 +2,8 @@ import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookingDialog from "@/components/BookingDialog";
 
+const PHONE_NUMBER = "+254700000000";
+
 const hours = [
   { day: "Monday", time: "1:30 AM – 10:00 PM" },
   { day: "Tuesday", time: "1:30 AM – 10:00 PM" },
@@ -36,13 +38,13 @@ const Contact = () => {
                   <p className="text-background/60 font-body">Nairobi, Kenya</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <a href={`tel:${PHONE_NUMBER}`} className="flex items-start gap-4 group">
                 <Phone className="w-5 h-5 text-accent mt-1 shrink-0" />
                 <div>
-                  <p className="text-background font-body font-semibold">Phone</p>
-                  <p className="text-background/60 font-body">+254 700 000 000</p>
+                  <p className="text-background font-body font-semibold group-hover:text-accent transition-colors">Phone</p>
+                  <p className="text-background/60 font-body group-hover:text-background/80 transition-colors">+254 700 000 000</p>
                 </div>
-              </div>
+              </a>
               <div className="flex items-start gap-4">
                 <Mail className="w-5 h-5 text-accent mt-1 shrink-0" />
                 <div>
@@ -52,11 +54,19 @@ const Contact = () => {
               </div>
             </div>
 
-            <BookingDialog>
-              <Button size="lg" className="mt-10 bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
-                Book an Appointment
-              </Button>
-            </BookingDialog>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <BookingDialog>
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
+                  Book Appointment
+                </Button>
+              </BookingDialog>
+              <a href={`tel:${PHONE_NUMBER}`}>
+                <Button size="lg" variant="outline" className="border-background/30 text-background hover:bg-background/10 font-body font-semibold text-base px-8">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Us
+                </Button>
+              </a>
+            </div>
           </div>
 
           <div>
