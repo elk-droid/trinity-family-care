@@ -1,5 +1,6 @@
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
 
 const hours = [
   { day: "Monday", time: "1:30 AM – 10:00 PM" },
@@ -51,9 +52,11 @@ const Contact = () => {
               </div>
             </div>
 
-            <Button size="lg" className="mt-10 bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
-              Book an Appointment
-            </Button>
+            <BookingDialog>
+              <Button size="lg" className="mt-10 bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
+                Book an Appointment
+              </Button>
+            </BookingDialog>
           </div>
 
           <div>

@@ -1,5 +1,6 @@
 import { Phone, MapPin, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
 import heroImage from "@/assets/hero-clinic.jpg";
 
 const Hero = () => {
@@ -37,10 +38,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-10">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
-              <Phone className="w-4 h-4 mr-2" />
-              Book Appointment
-            </Button>
+            <BookingDialog>
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8">
+                <Phone className="w-4 h-4 mr-2" />
+                Book Appointment
+              </Button>
+            </BookingDialog>
             <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-body text-base px-8">
               <MapPin className="w-4 h-4 mr-2" />
               Get Directions
