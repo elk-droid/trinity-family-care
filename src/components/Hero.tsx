@@ -44,10 +44,12 @@ const Hero = () => {
                 Book Appointment
               </Button>
             </BookingDialog>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-body text-base px-8">
-              <MapPin className="w-4 h-4 mr-2" />
-              Get Directions
-            </Button>
+            <a href="https://www.google.com/maps/search/Sidian+Trinity+Family+Medicine+Nairobi" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-body text-base px-8">
+                <MapPin className="w-4 h-4 mr-2" />
+                Get Directions
+              </Button>
+            </a>
           </div>
 
           <div className="flex items-center gap-2 text-primary-foreground/60 font-body text-sm">
