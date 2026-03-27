@@ -18,6 +18,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-6 font-body text-sm text-background/70">
           <a href="#services" className="hover:text-background transition-colors">Services</a>
+          <a href="/pharmacy" className="hover:text-background transition-colors">Pharmacy</a>
           <a href="#contact" className="hover:text-background transition-colors">Contact</a>
           <BookingDialog>
             <Button size="sm" variant="outline" className="border-background/30 text-background hover:bg-background/10 font-body font-semibold">
