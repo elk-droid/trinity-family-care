@@ -1,25 +1,33 @@
 import { Stethoscope, Baby, HeartPulse, Syringe } from "lucide-react";
+import consultationImg from "@/assets/consultation.jpg";
+import pediatricImg from "@/assets/pediatric-care.jpg";
+import labImg from "@/assets/lab-services.jpg";
+import vaccinationImg from "@/assets/vaccination.jpg";
 
 const services = [
   {
     icon: Stethoscope,
     title: "General Consultations",
     description: "Thorough diagnostic listening with personalized treatment plans for all ages.",
+    image: consultationImg,
   },
   {
     icon: Baby,
     title: "Pediatric Care",
     description: "Gentle, specialized healthcare for infants, children, and adolescents.",
+    image: pediatricImg,
   },
   {
     icon: HeartPulse,
     title: "Chronic Conditions",
     description: "Expert management of diabetes, hypertension, and other long-term conditions.",
+    image: labImg,
   },
   {
     icon: Syringe,
-    title: "Minor Procedures",
-    description: "Safe, in-clinic surgical procedures with professional aftercare support.",
+    title: "Vaccinations & Procedures",
+    description: "Safe vaccinations and in-clinic surgical procedures with professional aftercare.",
+    image: vaccinationImg,
   },
 ];
 
@@ -43,17 +51,29 @@ const Services = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group bg-card rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-border hover:border-primary/30"
+              className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-border hover:border-primary/30"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                />
               </div>
-              <h3 className="font-display text-xl font-semibold text-card-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground font-body leading-relaxed">
-                {service.description}
-              </p>
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <service.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-card-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground font-body leading-relaxed text-sm">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
